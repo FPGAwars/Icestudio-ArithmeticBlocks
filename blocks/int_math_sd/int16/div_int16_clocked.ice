@@ -2,28 +2,20 @@
   "version": "1.2",
   "package": {
     "name": "div_int16_sat_clocked",
-    "version": "1.0",
+    "version": "1.1",
     "description": "16 bits signed integer division, y = a * 16384  /  b",
     "author": "Sicco Dwars",
     "image": "%3Csvg%20width=%22800%22%20height=%22600%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Ctitle%3ELayer%201%3C/title%3E%3Ctext%20transform=%22matrix(12.6242%200%200%2016.1703%20-1645.38%20-2461.97)%22%20stroke=%22#000%22%20font-family=%22sans-serif%22%20font-size=%2220%22%20y=%22172.618%22%20x=%22143.199%22%20stroke-width=%220%22%20fill=%22#46673D%22%3EDIV%3C/text%3E%3Ctext%20transform=%22matrix(6.40974%200%200%205.3641%20-2559.75%20-1996.65)%22%20stroke=%22#000%22%20font-family=%22sans-serif%22%20font-size=%2224%22%20y=%22472.544%22%20x=%22424.696%22%20stroke-width=%220%22%3Eint_16%3C/text%3E%3Ctext%20transform=%22matrix(3.29925%200%200%202.90909%20497.935%2071.182)%22%20stroke=%22#000%22%20font-family=%22sans-serif%22%20font-size=%2220%22%20y=%22133.438%22%20x=%2240.029%22%20stroke-width=%220%22%20fill=%22#46673D%22%3Ediv_0%3C/text%3E%3Ctext%20transform=%22matrix(4.31725%200%200%204.90156%20-181.432%20-1113.11)%22%20stroke=%22#000%22%20font-family=%22sans-serif%22%20font-size=%2220%22%20y=%22286.288%22%20x=%2246.746%22%20stroke-width=%220%22%20fill=%22#46673D%22%3EA%3C/text%3E%3Ctext%20transform=%22matrix(4.85185%200%200%204.84659%20-192.792%20-1741.43)%22%20stroke=%22#000%22%20font-family=%22sans-serif%22%20font-size=%2220%22%20y=%22455.113%22%20x=%2243.405%22%20stroke-width=%220%22%20fill=%22#46673D%22%20cursor=%22move%22%3EB%3C/text%3E%3Ctext%20transform=%22matrix(3.27248%200%200%203.42821%20-129.691%20-767.106)%22%20stroke=%22#000%22%20font-family=%22sans-serif%22%20font-size=%2220%22%20y=%22258.312%22%20x=%2250.832%22%20stroke-width=%220%22%20fill=%22#46673D%22%3Eclk%3C/text%3E%3Ctext%20transform=%22matrix(2.85773%200%200%203.25982%2084.859%20-718.562)%22%20stroke=%22#000%22%20font-family=%22sans-serif%22%20font-size=%2220%22%20y=%22254.869%22%20x=%22198.231%22%20stroke-width=%220%22%20fill=%22#46673D%22%3Edone%3C/text%3E%3Cpath%20stroke=%22#000%22%20stroke-width=%226%22%20fill=%22none%22%20d=%22M-3%2055l33%2040M-2%20136l34-43%22/%3E%3C/svg%3E"
   },
   "design": {
-    "board": "iCEBreaker",
+    "board": "alhambra-ii",
     "graph": {
       "blocks": [
         {
           "id": "f22975a5-70af-4002-9067-1ba1edd8cc56",
           "type": "basic.output",
           "data": {
-            "name": "clk_out",
-            "pins": [
-              {
-                "index": "0",
-                "name": "NULL",
-                "value": "NULL"
-              }
-            ],
-            "virtual": true
+            "name": "clk_out"
           },
           "position": {
             "x": 784,
@@ -35,14 +27,6 @@
           "type": "basic.input",
           "data": {
             "name": "clk_in",
-            "pins": [
-              {
-                "index": "0",
-                "name": "NULL",
-                "value": "NULL"
-              }
-            ],
-            "virtual": true,
             "clock": false
           },
           "position": {
@@ -56,89 +40,7 @@
           "data": {
             "name": "y",
             "range": "[15:0]",
-            "pins": [
-              {
-                "index": "15",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "14",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "13",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "12",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "11",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "10",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "9",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "8",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "7",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "6",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "5",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "4",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "3",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "2",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "1",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "0",
-                "name": "",
-                "value": ""
-              }
-            ],
-            "virtual": true
+            "size": 16
           },
           "position": {
             "x": 792,
@@ -151,90 +53,8 @@
           "data": {
             "name": "a",
             "range": "[15:0]",
-            "pins": [
-              {
-                "index": "15",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "14",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "13",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "12",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "11",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "10",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "9",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "8",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "7",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "6",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "5",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "4",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "3",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "2",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "1",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "0",
-                "name": "",
-                "value": ""
-              }
-            ],
-            "virtual": true,
-            "clock": false
+            "clock": false,
+            "size": 16
           },
           "position": {
             "x": 8,
@@ -247,90 +67,8 @@
           "data": {
             "name": "b",
             "range": "[15:0]",
-            "pins": [
-              {
-                "index": "15",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "14",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "13",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "12",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "11",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "10",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "9",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "8",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "7",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "6",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "5",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "4",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "3",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "2",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "1",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "0",
-                "name": "",
-                "value": ""
-              }
-            ],
-            "virtual": true,
-            "clock": false
+            "clock": false,
+            "size": 16
           },
           "position": {
             "x": 16,
@@ -341,15 +79,7 @@
           "id": "5aad4260-c2e8-44ca-a726-52122bc47a1e",
           "type": "basic.output",
           "data": {
-            "name": "divideByZero",
-            "pins": [
-              {
-                "index": "0",
-                "name": "NULL",
-                "value": "NULL"
-              }
-            ],
-            "virtual": true
+            "name": "divideByZero"
           },
           "position": {
             "x": 800,
@@ -360,7 +90,7 @@
           "id": "1305a83f-5378-4d61-a0ab-8ad1e8b196d4",
           "type": "basic.code",
           "data": {
-            "code": "// y <= (a <<< 14) / b;  signed 16 bits integers, [-32768..32767 range output], 32767 if div by 0]\n// warning: no coercing against int16 MININT or MAXINT\n// 16384 = 0x4000 is 100% = 1.0 for a, b and y\n\nwire signed [31:0] a32bits;\nwire divideby0;\n\nassign a32bits = $signed(a) <<< 14;\nassign divideby0 = (b == 0);\n\nreg [15:0] y = 0;\nreg devideby0_out = 0;\nreg clk_out = 0;\n\nalways @(clk)\nbegin\n    y <= (a==0) ? 0 : (divideby0) ? 32767 : (a32bits / $signed(b));\n    devideby0_out <= divideby0;\n    clk_out <= clk;\nend\n",
+            "code": "// y <= (a <<< 14) / b;  signed 16 bits integers, [-32768..32767 range output], 32767 if div by 0]\n// warning: no coercing against int16 MININT or MAXINT\n// 16384 = 0x4000 is 100% = 1.0 for a, b and y\n\nwire signed [31:0] a32bits;\nwire divideby0;\n\nassign a32bits = $signed(a) <<< 14;\nassign divideby0 = (b == 0);\n\nreg [15:0] y_i = 0;\nassign y = y_i;\nreg devideby0_out_i = 0;\nassign devideby0_out = devideby0_out_i;\nreg clk_out_i = 0;\nassign clk_out = clk_out_i;\n\nalways @(clk)\nbegin\n    y_i <= (a==0) ? 0 : (divideby0) ? 32767 : (a32bits / $signed(b));\n    devideby0_out_i <= divideby0;\n    clk_out_i <= clk;\nend\n",
             "params": [],
             "ports": {
               "in": [
