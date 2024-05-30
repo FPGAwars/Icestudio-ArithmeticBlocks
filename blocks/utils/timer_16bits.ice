@@ -2,7 +2,7 @@
   "version": "1.2",
   "package": {
     "name": "timer_16bits",
-    "version": "1.0",
+    "version": "1.1",
     "description": "measure time by counting clk periods between start and stop pulse",
     "author": "Sicco Dwars",
     "image": ""
@@ -20,8 +20,8 @@
             "virtual": true
           },
           "position": {
-            "x": 72,
-            "y": 120
+            "x": 16,
+            "y": 152
           }
         },
         {
@@ -32,8 +32,8 @@
             "virtual": true
           },
           "position": {
-            "x": 752,
-            "y": 144
+            "x": 1048,
+            "y": 192
           }
         },
         {
@@ -45,8 +45,8 @@
             "virtual": true
           },
           "position": {
-            "x": 72,
-            "y": 224
+            "x": 16,
+            "y": 312
           }
         },
         {
@@ -59,8 +59,8 @@
             "virtual": true
           },
           "position": {
-            "x": 760,
-            "y": 296
+            "x": 1056,
+            "y": 432
           }
         },
         {
@@ -72,15 +72,15 @@
             "virtual": true
           },
           "position": {
-            "x": 72,
-            "y": 320
+            "x": 16,
+            "y": 472
           }
         },
         {
           "id": "d5d8f7b2-c690-45fc-a3fa-6a789817784b",
           "type": "basic.code",
           "data": {
-            "code": "reg [15:0] counter = 0;\nreg [15:0] t_start = 0;\nreg [15:0] duration = 0;\nreg started = 0;\nreg prev_start = 0;\nreg prev_stop = 0;\n\nalways @(posedge clk)\nbegin\n    if (start && !prev_start)\n         t_start <= counter;\n    if (stop && !prev_stop)\n         duration <= counter - t_start;\n \n    counter <= counter + 1'b1;\n\n    prev_start <= start;\n    prev_stop <= stop;\n\nend",
+            "code": "reg [15:0] counter = 0;\nreg [15:0] t_start = 0;\nreg [15:0] duration_i = 0;\nassign duration = duration_i;\nreg started_i = 0;\nassign started = started_i;\nreg prev_start = 0;\nreg prev_stop = 0;\n\nalways @(posedge clk)\nbegin\n    if (start && !prev_start)\n         t_start <= counter;\n    if (stop && !prev_stop)\n         duration_i <= counter - t_start;\n \n    counter <= counter + 1'b1;\n\n    prev_start <= start;\n    prev_stop <= stop;\n\nend",
             "params": [],
             "ports": {
               "in": [
@@ -111,8 +111,8 @@
             "y": 104
           },
           "size": {
-            "width": 400,
-            "height": 296
+            "width": 672,
+            "height": 480
           }
         }
       ],
